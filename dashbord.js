@@ -293,49 +293,37 @@ function valid(event) {
       clearForm();
     }
     event.preventDefault();
-  } else if (validemaildata) {
-    firstnamemgs.textContent = "This field is required";
-    lastnamemgs.textContent = "This field is required";
-    phonemgs.textContent = "This field is required";
-    photomgs.textContent = "This field is required";
-    event.preventDefault();
-  } else if (validfirstnamedata) {
-    emailmgs.textContent = "This field is required";
-    lastnamemgs.textContent = "This field is required";
-    phonemgs.textContent = "This field is required";
-    photomgs.textContent = "This field is required";
-    event.preventDefault();
-  } else if (validlastnamedata) {
-    emailmgs.textContent = "This field is required";
-    firstnamemgs.textContent = "This field is required";
-    phonemgs.textContent = "This field is required";
-    photomgs.textContent = "This field is required";
-    event.preventDefault();
-  } else if (validPhoneData) {
-    emailmgs.textContent = "This field is required";
-    firstnamemgs.textContent = "This field is required";
-    lastnamemgs.textContent = "This field is required";
-    photomgs.textContent = "This field is required";
-    event.preventDefault();
-  } else if (validPhotoData) {
-    emailmgs.textContent = "This field is required";
-    firstnamemgs.textContent = "This field is required";
-    lastnamemgs.textContent = "This field is required";
-    phonemgs.textContent = "This field is required";
-    event.preventDefault();
-  }
-  // else if(!recheckemail || !recheckpassword){
-  //   toastr.info("Data allready exist");
-  //   recheckemail = false;
-  //   recheckpassword = false;
-  //   event.preventDefault();
-  // }
-  else {
-    emailmgs.textContent = "This field is required";
-    firstnamemgs.textContent = "This field is required";
-    lastnamemgs.textContent = "This field is required";
-    phonemgs.textContent = "This field is required";
-    photomgs.textContent = "This field is required";
+  } else {
+    if (firstname.value === "") {
+      firstnamemgs.textContent = "This field is required";
+    } else {
+      firstnamemgs.textContent = "";
+    }
+    
+    if (lastname.value === "") {
+      lastnamemgs.textContent = "This field is required";
+    } else {
+      lastnamemgs.textContent = "";
+    }
+
+    if (email.value === "") {
+      emailmgs.textContent = "This field is required";
+    } else {
+      emailmgs.textContent = "";
+    }
+
+    if (phone.value === "") {
+      phonemgs.textContent = "This field is required";
+    } else {
+      phonemgs.textContent = "";
+    }
+
+    if (cardURL === "") {
+      photomgs.textContent = "This field is required";
+    } else {
+      photomgs.textContent = "";
+    }
+
     event.preventDefault();
   }
 }
